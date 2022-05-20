@@ -7,8 +7,8 @@ import 'package:flutter/widgets.dart' as e;
 import 'package:generator_flutter/domain/entity.dart';
 
 class Image implements Entity {
-  int height = 0;
-  int width = 0;
+  double height = 0;
+  double width = 0;
   String background = "";
   Image();
   factory Image.fromJson(String json) {
@@ -24,6 +24,7 @@ class Image implements Entity {
 
   @override
   Widget build() {
-    return e.Image.memory(base64Decode(background));
+    return e.Image.memory(base64Decode(background),
+        height: height, width: width);
   }
 }
