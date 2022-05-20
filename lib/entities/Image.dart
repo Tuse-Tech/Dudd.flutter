@@ -25,6 +25,6 @@ class Image implements Entity {
   @override
   Widget build() {
     return e.Image.memory(base64Decode(background),
-        height: height, width: width);
+        height: double.parse("$height"), width: double.parse("$width"));
   }
 }
