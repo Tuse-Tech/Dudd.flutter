@@ -14,9 +14,9 @@ class Image implements Entity {
   factory Image.fromJson(String json) {
     var entity = Image();
     var dataMap = jsonDecode(json);
-    entity.height = dataMap["height"];
-    entity.width = dataMap["width"];
-    entity.background = dataMap["background"];
+    entity.height = dataMap["height"]["state"];
+    entity.width = dataMap["width"]["state"];
+    entity.background = dataMap["background"]["state"];
     return entity;
   }
 
