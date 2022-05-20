@@ -16,7 +16,9 @@ class Image implements Entity {
     var dataMap = jsonDecode(json);
     entity.height = dataMap["height"]["state"];
     entity.width = dataMap["width"]["state"];
-    entity.background = dataMap["background"]["state"];
+
+    entity.background = (dataMap["background"]["state"] as String)
+        .replaceAll("/^data:image\/[a-z]+;base64,/", "");
     return entity;
   }
 
