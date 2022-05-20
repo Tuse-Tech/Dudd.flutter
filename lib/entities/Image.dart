@@ -18,7 +18,7 @@ class Image implements Entity {
     entity.width = dataMap["width"]["state"];
 
     entity.background = (dataMap["background"]["state"] as String)
-        .replaceAll("data:image\/[a-z]+;base64,", "");
+        .replaceAll(RegExp("/^data:image\/[a-z]+;base64,/"), "");
     return entity;
   }
 
